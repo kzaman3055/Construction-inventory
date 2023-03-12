@@ -21,9 +21,9 @@ return new class extends Migration
             $table->string('mobile')->nullable();
             $table->tinyInteger('status')->default('1');
             $table->string('address')->nullable();
-            $table->unsignedBigInteger('square_feet')->nullable();
-            $table->unsignedBigInteger('estimation')->nullable();
-            $table->unsignedBigInteger('advance_amount')->nullable();
+            $table->unsignedBigInteger('square_feet')->default(0);
+            $table->unsignedBigInteger('estimation')->default(0);
+            $table->unsignedBigInteger('advance_amount')->default(0);
 
 
             $table->timestamps();

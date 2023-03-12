@@ -1,8 +1,16 @@
 <?php
 namespace App\Http\Controllers\POS;
+use App\Models\Product;
+
 use App\Http\Controllers\Controller;
 use App\Models\Customer;
+use App\Models\DailyCost;
+use App\Models\DailyCostCategory;
+use App\Models\ProductSale;
+use App\Models\Unit;
+
 use Illuminate\Http\Request;
+
 class CustomerController extends Controller
 {
     /**
@@ -12,6 +20,8 @@ class CustomerController extends Controller
      */
     public function index()
     {
+        $data['alldailycostcategory'] = DailyCostCategory::all();
+
         $data['alldata'] = Customer::all();
         return view('admin.customer.view_customer', $data);
     }
@@ -37,10 +47,6 @@ class CustomerController extends Controller
             'email' => 'required ',
             'mobile' => 'required ',
             'address' => 'required ',
-            'square_feet' => 'required ',
-            'estimation' => 'required ',
-            'advance_amount' => 'required',
-
 
         ]);
         $data = new Customer();
@@ -48,15 +54,36 @@ class CustomerController extends Controller
         $data->email = $request->email;
         $data->mobile = $request->mobile;
         $data->address = $request->address;
-        $data->square_feet = $request->square_feet;
-        $data->estimation = $request->estimation;
-        $data->advance_amount = $request->advance_amount;
-
-
 
         $data->save();
-        return redirect()->back()->with('message','Data added Successfully!');
+        return redirect()->back()->with('message', 'Data added Successfully!');
     }
+
+    public function dailycoststore(Request $request)
+    {
+        $validatedData = $request->validate([
+            'customer_id' => 'required',
+            'category_id' => 'required|array',
+            'category_id.*' => 'required|integer',
+            'amount' => 'required|array',
+            'amount.*' => 'required|numeric',
+        ]);
+
+        $totalinput = count($request->category_id);
+
+        if ($totalinput > 0) {
+            for ($i = 0; $i < $totalinput; $i++) {
+                $data = new DailyCost();
+                $data->customer_id = $request->customer_id;
+                $data->cost_category_id = $request->category_id[$i];
+                $data->amount = $request->amount[$i];
+                $data->save();
+            }
+        }
+
+        return redirect()->back()->with('message', 'Data added Successfully!');
+    }
+
     /**
      * Display the specified resource.
      *
@@ -65,7 +92,42 @@ class CustomerController extends Controller
      */
     public function show($id)
     {
-        //
+
+        $data['alldata'] = Customer::all();
+        $data['customerdata'] = Customer::find($id);
+        $data['alldailycostcategory'] = DailyCostCategory::all();
+
+        return view('admin.customer.view_customer', $data);
+
+    }
+
+    public function showdata($id)
+    {
+
+        $data['customerdata'] = Customer::find($id);
+        $data['unitdata'] = Unit::all();
+
+
+        $data['alldailycost'] = DailyCost::where('customer_id', $id)->get();
+
+        $data['materialdata'] = ProductSale::where('customer_id', $id)->get();
+
+        $todaydailycost = DailyCost::where('customer_id', $id)->whereDate('created_at', today())->sum('amount');
+        $todaymaterialcost = ProductSale::where('customer_id', $id)->whereDate('created_at', today())->sum('total');
+
+        $totaldailycost = DailyCost::where('customer_id', $id)->sum('amount');
+        $totalmaterialcost = ProductSale::where('customer_id', $id)->sum('total');
+
+        $data['productdata'] = Product::all();
+
+        $data['categorydata'] = DailyCostCategory::all();
+
+        return view('admin.customer.view_customer_data', $data)
+        ->with('totaldailycost', $totaldailycost)
+        ->with('totalmaterialcost', $totalmaterialcost)
+        ->with('todaydailycost', $todaydailycost)
+        ->with('todaymaterialcost', $todaymaterialcost);
+
     }
     /**
      * Show the form for editing the specified resource.
@@ -91,11 +153,8 @@ class CustomerController extends Controller
         $data = Customer::findOrFail($id);
         $input = $request->all();
         $action = $data->update($input);
-        return redirect()->route('manage-customer.index')->with('info','Data updated successfully!');
+        return redirect()->route('manage-customer.index')->with('info', 'Data updated successfully!');
     }
-
-
-
 
     public function AmountDetails($id, Request $request)
     {
@@ -113,10 +172,6 @@ class CustomerController extends Controller
         return redirect()->route('manage-customer.index')->with('info', 'Data updated successfully!');
     }
 
-
-
-
-
     /**
      * Remove the specified resource from storage.
      *
@@ -127,6 +182,6 @@ class CustomerController extends Controller
     {
         $data = Customer::findOrFail($id);
         $action = $data->delete();
-        return redirect()->back()->with('error','Data Deleted Successfully!');
+        return redirect()->back()->with('error', 'Data Deleted Successfully!');
     }
 }

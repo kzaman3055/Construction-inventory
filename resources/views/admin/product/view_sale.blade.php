@@ -34,26 +34,26 @@
                                 <ul class="nav nav-tabs customtab2" role="tablist">
                                     <li class="nav-item"> <a class="nav-link active" data-toggle="tab" href="#manage_sale"
                                             role="tab"><span class="hidden-sm-up"><i class="ion-person"></i></span>
-                                            <span class="hidden-xs-down">New Sale</span></a>
+                                            <span class="hidden-xs-down">New Transfer</span></a>
                                     </li>
                                     <li class="nav-item"> <a class="nav-link" data-toggle="tab" href="#sle_list"
                                             role="tab"><span class="hidden-sm-up"><i class="ion-person"></i></span>
-                                            <span class="hidden-xs-down">Sale List</span></a> </li>
+                                            <span class="hidden-xs-down">Transfer List</span></a> </li>
                                     <li class="nav-item"> <a class="nav-link" data-toggle="tab" href="#sale_Invoice_list"
                                             role="tab"><span class="hidden-sm-up"><i class="ion-person"></i></span>
-                                            <span class="hidden-xs-down">Sale Invoice List</span></a> </li>
+                                            <span class="hidden-xs-down">Transfer Invoice List</span></a> </li>
                                 </ul>
                                 <!-- Tab panes -->
                                 <div class="tab-content">
                                     <div class="tab-pane active" id="manage_sale" role="tabpane1">
                                         <div class="col-xl-12">
                                             <div class="box-header with-border">
-                                                <h4 class="box-title">Sale Product</h4>
+                                                <h4 class="box-title">Transfer Product</h4>
                                                 <a type="submit" href="{{ URL::to('manage-customer') }}"
                                                     class="btn btn-primary pull-right"style="margin-right: 10px;">Add
                                                     Customer</a>
                                             </div>
-                                            <!-- /.box-header --> 
+                                            <!-- /.box-header -->
 
                                             <div class="box-body">
                                                 {!! Form::open([
@@ -66,12 +66,12 @@
                                                         <div class="row">
                                                             <div class="col-md-6">
                                                                 <div class="form-group">
-                                                                    <label>Customer</label>
+                                                                    <label>Customer/Project</label>
                                                                     <select name="customer_id"
                                                                         class="form-control customer-select select2"
                                                                         style="width: 100%;" required>
                                                                         <option value="" selected="selected"
-                                                                            disabled="">Select Customer</option>
+                                                                            disabled="">Select Customer/Project</option>
                                                                         @foreach ($customerdata as $key => $customer)
                                                                             <option value="{{ $customer->id }}">
                                                                                 {{ $customer->name }} Mobile:
@@ -212,6 +212,11 @@
                                                               <input type="number" name="quantity[]" class="form-control" value="" required placeholder="Enter Product Quantity" min="1">
                                                             </div>
                                                           </div>
+
+
+
+
+
                                                           <div class="form-group">
                                                             <label>Price</label>
                                                             <div class="controls">
@@ -227,6 +232,9 @@
                                                          <br>
                                                          <div style="display: flex; justify-content: flex-end;  font-size: 1.2em;"><b>Total: </b> <span id="total-price"></span> &#2547;</div>
                                                         <br>
+
+
+
                                                 <div class="pull-right">
                                                 <button type="button" class="remove-product btn btn-danger"><i class="fa fa-minus-circle "></i> Remove</button>
                                                 </div>
@@ -234,6 +242,14 @@
                                                 </div>
                                                 </div>
                                                 `;
+
+
+
+
+
+
+
+
                                                                 $('#product-fields').append(html);
                                                                 // Initialize select2 for new dropdowns customer-select
                                                                 $('.product-select ').select2();
@@ -279,7 +295,7 @@
                                                                     <th>Product Category</th>
                                                                     <th>Product Name</th>
                                                                     <th>Product Code</th>
-                                                                    <th>Price &#2547;</th>
+                                                               <th>Price &#2547;</th>
                                                                     <th>Stock Amount</th>
                                                                     <th>Status</th>
                                                                 </tr>
@@ -372,7 +388,7 @@
                                         <div class="col-xl-12">
                                         </div>
                                         <div class="box-header with-border">
-                                            <h3 class="box-title">All Sale list</h3>
+                                            <h3 class="box-title">All Transfer list</h3>
                                         </div>
                                         <div class="table-responsive">
                                             <table id="example3"
@@ -428,7 +444,7 @@
                                         <div class="col-xl-12">
                                         </div>
                                         <div class="box-header with-border">
-                                            <h3 class="box-title">All Sale Invoice</h3>
+                                            <h3 class="box-title">All Transfer Invoice</h3>
                                         </div>
                                         <div class="table-responsive">
                                             <table id="example"
@@ -439,10 +455,10 @@
                                                         <th>Customer Name</th>
                                                         <th>Invoice ID</th>
                                                         <th>Date</th>
-                                                        <th>Grand Total</th>
+                                                         <th>Grand Total</th>
                                                         <th>Pay Amount</th>
                                                         <th>Due Amount</th>
-                                                        <th>Letest Paying Date</th>
+                                                     <th>Letest Paying Date</th>
                                                         <th>action</th>
                                                     </tr>
                                                 </thead>
@@ -458,22 +474,22 @@
                                                             <td>{{ $saleinvoicedata->invoice_code }}</td>
                                                             <td>{{ $saleinvoicedata->created_at->format('h:i A d-m-Y') }}
                                                             </td>
-                                                            <td>{{ $saleinvoicedata->total_price }}</td>
-                                                            <td>
+                                                             <td>{{ $saleinvoicedata->total_price }} &#2547;</td>
+                                                             <td>
                                                                 @if ($saleinvoicedata->due == 0)
                                                                     <span class="badge badge-success">Fully Paid</span>
                                                                 @else
                                                                     {{ $saleinvoicedata->pay }}
                                                                 @endif
                                                             </td>
-                                                            <td>
+                                                             <td>
                                                                 @if ($saleinvoicedata->due == 0)
                                                                     <span class="badge badge-success">No due</span>
                                                                 @else
                                                                     {{ $saleinvoicedata->due }}
                                                                 @endif
                                                             </td>
-                                                            <td>{{ $saleinvoicedata->updated_at->format('h:i A d-m-Y') }}
+                                                             <td>{{ $saleinvoicedata->updated_at->format('h:i A d-m-Y') }}
                                                             <td>
                                                                 <div class="btn-group mb-5">
                                                                     <button type="button"
@@ -498,15 +514,7 @@
                                                                                 class="fa fa-file-text-o
                                                                             "></i>Show
                                                                             Invoice</a>
-                                                                        {{-- <form action="" method="POST">
-                                                                            @csrf
-                                                                            @method('DELETE')
-                                                                            <a type="submit"
-                                                                                class="dropdown-item">
-                                                                                <i title="Delete"
-                                                                                    class="fa fa-trash"></i>Delete
-                                                                            </a>
-                                                                        </form> --}}
+                                                                      
                                                                     </div>
                                                                 </div>
                                                             </td>

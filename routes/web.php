@@ -46,10 +46,15 @@ Route::resource('manage-customer', CustomerController::class);
 Route::post('amountDetails/update/{id}', [CustomerController::class, 'AmountDetails'])->name('amountDetails.update');
 
 
-
+Route::post('/dailycoststore', [CustomerController::class, 'dailycoststore'])->name('customer.dailycoststore');
+Route::get('/projectdata/{id}', [CustomerController::class, 'showdata'])->name('project.showdata');
 
 
 Route::resource('manage-location', 'App\Http\Controllers\Other\LocationController');
+Route::resource('manage-daily-cost-category', 'App\Http\Controllers\Other\DailyCostCategoryController');
+
+
+
 Route::resource('manage-unit', 'App\Http\Controllers\Other\UnitController');
 Route::resource('manage-shop', 'App\Http\Controllers\Shop\ShopController');
 

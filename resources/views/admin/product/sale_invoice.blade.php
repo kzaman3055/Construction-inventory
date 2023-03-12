@@ -12,7 +12,7 @@
                           <ol class="breadcrumb">
                               <li class="breadcrumb-item"><a href="#"><i class="mdi mdi-home-outline"></i></a></li>
                               <li class="breadcrumb-item" aria-current="page">Invoice</li>
-                              <li class="breadcrumb-item active" aria-current="page"> Sale Invoice</li>
+                              <li class="breadcrumb-item active" aria-current="page"> Transfer Invoice</li>
                           </ol>
                       </nav>
                   </div>
@@ -40,7 +40,7 @@
               </div>
               <div class="col-12">
                 <div class="page-header">
-                  <h2 class="d-inline"><span class="font-size-30">Sale Invoice</span></h2>
+                  <h2 class="d-inline"><span class="font-size-30">Transfer Invoice</span></h2>
                   <div class="pull-right text-right">
                                                        @foreach ($saleinvoice as $key => $saleinvoice)
                       <h3>                                                      {{ \Carbon\Carbon::parse($saleinvoice->updated_at)->format('h:i A d-m-Y') }}
@@ -76,7 +76,7 @@
                   <strong class="text-blue font-size-24">
                     {{ $customer->name }}</strong><br>
                     {{ $customer->address }}<br>
-                  <strong>Phone: {{ $customer->phone }} &nbsp;&nbsp;&nbsp;&nbsp; Email: {{ $customer->email }}</strong>
+                  <strong>Phone: {{ $customer->mobile }} &nbsp;&nbsp;&nbsp;&nbsp; Email: {{ $customer->email }}</strong>
                 </address>
               </div>
               <!-- /.col -->
@@ -85,7 +85,7 @@
                     <div class="col-md-6 col-lg-3"><b>Invoice </b>
                         {{ $saleinvoice->invoice_code }}
                     </div>
-                    <div class="col-md-6 col-lg-3"><b>Purchase Date:</b>           {{ \Carbon\Carbon::parse($saleinvoice->created_at)->format('h:i A d-m-Y') }}</div>
+                    <div class="col-md-6 col-lg-3"><b>Transfer Date:</b>           {{ \Carbon\Carbon::parse($saleinvoice->created_at)->format('h:i A d-m-Y') }}</div>
                     <div class="col-md-6 col-lg-3"><b></b> </div>
                     <div class="col-md-6 col-lg-3"><b></b> </div>
                   </div>
@@ -104,9 +104,9 @@
                     <th>Product Code #</th>
                     <th>Supplier Name</th>
                     <th class="text-right">Quantity</th>
-                    <th class="text-right">Unit Cost                                                                     &#2547;
+                <th class="text-right">Unit Cost                                                                     &#2547;
                     </th>
-                    <th class="text-right">Subtotal                                                                     &#2547;
+            <th class="text-right">Subtotal                                                                     &#2547;
                     </th>
                   </tr>
                   @foreach ($saledata as $key => $product)
@@ -142,7 +142,7 @@
                 @endif
             @endforeach
         </td>
-        <td class="text-right"> {{$product->price}}</td>
+         <td class="text-right"> {{$product->price}}</td>
         <td class="text-right">{{$product->total}}</td>
     </tr>
 @endforeach
@@ -152,7 +152,7 @@
               <!-- /.col -->
             </div>
             <!-- /.row -->
-            <div class="row">
+           <div class="row">
               <div class="col-12 text-right">
                   <div>
                       <p>Total amount  :  {{$saleinvoice->total_price}}</p>

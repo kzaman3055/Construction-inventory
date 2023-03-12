@@ -3,10 +3,11 @@
 namespace App\Http\Controllers\Other;
 
 use App\Http\Controllers\Controller;
-use App\Models\Location;
+use App\Models\DailyCostCategory;
+
 use Illuminate\Http\Request;
 
-class LocationController extends Controller
+class DailyCostCategoryController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -16,8 +17,10 @@ class LocationController extends Controller
     public function index()
     {
 
-        $data['alldata'] = Location::all();
-        return view('admin.other.view_location', $data);
+
+        $data['alldata'] = DailyCostCategory::all();
+        return view('admin.other.view_dailycostcategory', $data);
+
 
     }
 
@@ -45,12 +48,12 @@ class LocationController extends Controller
 
         ]);
 
-        $totallocation = count($request->name);
-        if ($totallocation != null) {
+        $totalcategory = count($request->name);
+        if ($totalcategory != null) {
 
-            for ($i = 0; $i < $totallocation; $i++) {
+            for ($i = 0; $i < $totalcategory; $i++) {
 
-                $data = new Location();
+                $data = new DailyCostCategory();
                 $data->name = $request->name[$i];
 
                 $data->save();
@@ -82,9 +85,9 @@ class LocationController extends Controller
 
 
 
-        $data['alldata'] = Location::all();
-        $data['editdata'] = Location::find($id);
-        return view('admin.other.view_location', $data);
+        $data['alldata'] = DailyCostCategory::all();
+        $data['editdata'] = DailyCostCategory::find($id);
+        return view('admin.other.view_dailycostcategory', $data);
 
     }
 
@@ -97,12 +100,7 @@ class LocationController extends Controller
      */
     public function update(Request $request, $id)
     {
-
-        $data = Location::findOrFail($id);
-        $input = $request->all();
-        $action = $data->update($input);
-        return redirect()->route('manage-location.index')->with('info', 'Data updated successfully!');
-
+        //
     }
 
     /**
@@ -114,9 +112,14 @@ class LocationController extends Controller
     public function destroy($id)
     {
 
-        $data = Location::findOrFail($id);
+
+
+        $data = DailyCostCategory::findOrFail($id);
         $action = $data->delete();
         return redirect()->back()->with('error', 'Data Deleted Successfully!');
+
+
+
 
     }
 }

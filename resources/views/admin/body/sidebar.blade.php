@@ -24,26 +24,27 @@
         <li class="treeview">
           <a href="#">
             <i data-feather="users"></i>
-            <span>Shop</span>
+            <span>View Contacts</span>
             <span class="pull-right-container">
               <i class="fa fa-angle-right pull-right"></i>
             </span>
           </a>
           <ul class="treeview-menu">
-            <li><a href="{{URL::To('manage-shop')}}"><i class="ti-more"></i>View Store</a></li>
+            <li><a href="{{URL::To('manage-shop')}}"><i class="ti-more"></i>View Shop</a></li>
+            <li><a href="{{URL::To('manage-supplier')}}"><i class="ti-more"></i>View Supplier</a></li>
+
           </ul>
         </li>
         <li class="treeview">
           <a href="#">
             <i data-feather="users"></i>
-            <span>Contact Management</span>
+            <span>Project Management</span>
             <span class="pull-right-container">
               <i class="fa fa-angle-right pull-right"></i>
             </span>
           </a>
           <ul class="treeview-menu">
-            <li><a href="{{URL::To('manage-supplier')}}"><i class="ti-more"></i>View Supplier</a></li>
-            <li><a href="{{URL::To('manage-customer')}}"><i class="ti-more"></i>View Customer</a></li>
+            <li><a href="{{URL::To('manage-customer')}}"><i class="ti-more"></i>View Project</a></li>
           </ul>
         </li>
 
@@ -60,7 +61,7 @@
           </a>
 
           <ul class="treeview-menu">
-            <li><a href="{{URL::To('manage-product-sale')}}"><i class="ti-more"></i>Manage Sale</a></li>
+            <li><a href="{{URL::To('manage-product-sale')}}"><i class="ti-more"></i>Manage Transfer</a></li>
 
             <li><a href="{{URL::To('manage-product-purchase')}}"><i class="ti-more"></i>Manage Stock</a></li>
 
@@ -83,7 +84,7 @@
         </li>
 
 
-        <li class="header nav-small-cap">User Interface</li>
+        <li class="header nav-small-cap">Additional Panel</li>
         <li class="treeview">
           <a href="#">
             <i data-feather="grid"></i>
@@ -94,6 +95,8 @@
           </a>
           <ul class="treeview-menu">
             <li><a href="{{URL::To('manage-location')}}"><i class="ti-more"></i>View Location</a></li>
+            <li><a href="{{URL::To('manage-daily-cost-category')}}"><i class="ti-more"></i>View Daily Cost Category</a></li>
+
             <li><a href="{{URL::To('manage-unit')}}"><i class="ti-more"></i>View Unit</a></li>
 
           </ul>
