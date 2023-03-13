@@ -74,11 +74,11 @@ class InvoiceController extends Controller
                 }
 
                 // check if the updated quantity is less than or equal to the original quantity
-                if ($quantity <= $sale->quantity) {
+                if ($quantity < $sale->quantity) {
                     $sale->quantity = $quantity;
                     $sale->save();
                 } else {
-                    return redirect()->back()->with('error', 'Return quantity cannot be greater than the sold quantity.');
+                    return redirect()->back()->with('error', 'Return quantity cannot be same or greater than the sold quantity.');
                 }
             }
         }

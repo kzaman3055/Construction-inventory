@@ -26,6 +26,9 @@ Route::get('/', function () {
     return view('auth.login');
 });
 
+Route::group(['middleware' => 'prevent-back-history'],function(){
+
+
 Auth::routes();
 
 // Admin controller Start
@@ -173,4 +176,5 @@ Route::post('/Return/update', 'App\Http\Controllers\Product\InvoiceController@Re
 Route::get('/returnInvoices/sale/{id}', 'App\Http\Controllers\Product\InvoiceController@ReturnSaleInvoice')->name('ReturnSaleInvoice.show');
 
 
+});
 });
