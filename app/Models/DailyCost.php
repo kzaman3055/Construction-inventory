@@ -8,4 +8,7 @@ use Illuminate\Database\Eloquent\Model;
 class DailyCost extends Model
 {
     use HasFactory;
+    protected $fillable = [
+        'amount',
+    ];
 }

@@ -309,6 +309,8 @@
                                                                 <tr>
                                                                     <th>SL#</th>
                                                                     <th>Product Name</th>
+                                                                    <th>Product Category</th>
+
                                                                     <th>Product Code</th>
                                                                     <th>Unit</th>
                                                                     <th>Status</th>
@@ -319,6 +321,11 @@
                                                                     <tr>
                                                                         <td>{{ $key + 1 }}</td>
                                                                         <td>{{ $product->name }}</td>
+                                                                        @foreach ($categorydata as $category)
+                                                                        @if ($category->id == $product->category_id)
+                                                                            <td>{{ $category->name }}</td>
+                                                                        @endif
+                                                                    @endforeach
                                                                         <td>{{ $product->product_code }}</td>
                                                                         @foreach ($unitdata as $unit)
                                                                             @if ($product->unit_id == $unit->id)
@@ -357,6 +364,8 @@
                                                     <tr>
                                                         <th>SL#</th>
                                                         <th>Product Name</th>
+                                                        <th>Product Category</th>
+
                                                         <th>Product Code</th>
                                                         <th>Stock Amount</th>
                                                         <th>Status</th>
@@ -367,6 +376,11 @@
                                                         <tr>
                                                             <td>{{ $key + 1 }}</td>
                                                             <td>{{ $product->name }}</td>
+                                                            @foreach ($categorydata as $category)
+                                                            @if ($category->id == $product->category_id)
+                                                                <td>{{ $category->name }}</td>
+                                                            @endif
+                                                        @endforeach
                                                             <td>{{ $product->product_code }}</td>
                                                             <td>
                                                                 {{ App\Models\ProductStock::where('product_code', $product->product_code)->first()->stock_quantity ?? '0' }}
@@ -408,6 +422,8 @@
                                                     <tr>
                                                         <th>SL#</th>
                                                         <th>Product Name</th>
+                                                        <th>Product Category</th>
+
                                                         <th>Product Code</th>
                                                         <th>Invoice ID</th>
                                                         <th>Supplier</th>
@@ -421,10 +437,16 @@
                                                     @foreach ($purchasedata as $key => $purchasedata)
                                                         <tr>
                                                             <td>{{ $key + 1 }}</td>
+
                                                             @foreach ($alldata as $product)
                                                                 @if ($product->product_code == $purchasedata->product_code)
                                                                     <td>{{ $product->name }} </td>
                                                                 @endif
+                                                            @endforeach
+                                                            @foreach ($categorydata as $category)
+                                                            @if ($category->id == $product->category_id)
+                                                                <td>{{ $category->name }}</td>
+                                                            @endif
                                                             @endforeach
                                                             <td>{{ $purchasedata->product_code }}</td>
                                                             <td>{{ $purchasedata->invoice_code }}</td>

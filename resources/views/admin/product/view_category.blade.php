@@ -145,7 +145,7 @@
                                                 <tr>
                                                     <td>{{ $key + 1 }}</td>
                                                     <td>{{ $categories->name }}</td>
-                                                    </td>
+                                                
                                                     <td>
                                                         <div class="btn-group mb-5">
                                                             <button type="button"
@@ -157,7 +157,7 @@
 
 
                                                             <div class="dropdown-menu">
-                                                              
+
                                                                 <a class="dropdown-item"
                                                                     href="{{ route('manage-category.edit', $categories->id) }}"><i
                                                                         class="fa fa-pencil"></i> Edit</a>

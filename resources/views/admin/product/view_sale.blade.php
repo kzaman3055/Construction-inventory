@@ -397,6 +397,8 @@
                                                     <tr>
                                                         <th>SL#</th>
                                                         <th>Product Name</th>
+                                                        <th>Product Category</th>
+
                                                         <th>Product Code</th>
                                                         <th>Invoice ID</th>
                                                         <th>Customer</th>
@@ -415,6 +417,11 @@
                                                                     <td>{{ $product->name }} </td>
                                                                 @endif
                                                             @endforeach
+                                                            @foreach ($categorydata as $category)
+                                                            @if ($category->id == $product->category_id)
+                                                                <td>{{ $category->name }}</td>
+                                                            @endif
+                                                        @endforeach
                                                             <td>{{ $purchasedata->product_code }}</td>
                                                             <td>{{ $purchasedata->invoice_code }}</td>
                                                             @foreach ($customerdata as $customer)
@@ -514,7 +521,13 @@
                                                                                 class="fa fa-file-text-o
                                                                             "></i>Show
                                                                             Invoice</a>
-                                                                      
+                                                                            <a class="dropdown-item"
+                                                                            href="{{ route('ReturnSaleInvoice.show', ['id' => $saleinvoicedata->invoice_code]) }}"><i
+                                                                                class="fa fa-file-text-o
+                                                                            "></i>Return
+                                                                            Invoice
+                                                                        </a>
+
                                                                     </div>
                                                                 </div>
                                                             </td>

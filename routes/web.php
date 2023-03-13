@@ -47,6 +47,21 @@ Route::post('amountDetails/update/{id}', [CustomerController::class, 'AmountDeta
 
 
 Route::post('/dailycoststore', [CustomerController::class, 'dailycoststore'])->name('customer.dailycoststore');
+
+
+Route::post('dailyCost/update/{id}', [CustomerController::class, 'DailyCostAmount'])->name('dailyCost.update');
+
+
+
+
+Route::delete('/dailyCostDestroy/{id}', [CustomerController::class, 'DailyCostAmountDestroy'])->name('dailyCost.destroy');
+
+
+
+
+
+
+
 Route::get('/projectdata/{id}', [CustomerController::class, 'showdata'])->name('project.showdata');
 
 
@@ -144,6 +159,18 @@ Route::get('/sale-mark-as-paid/{id}', function($id) {
 Route::get('/invoices/purchase/{id}', 'App\Http\Controllers\Product\InvoiceController@showPurchaseInvoice')->name('purchase-invoice.show');
 
 Route::get('/invoices/sale/{id}', 'App\Http\Controllers\Product\InvoiceController@showSaleInvoice')->name('sale-invoice.show');
+
+Route::post('/Return/update', 'App\Http\Controllers\Product\InvoiceController@ReturnUpdate')->name('return.update');
+
+
+
+
+
+
+
+
+
+Route::get('/returnInvoices/sale/{id}', 'App\Http\Controllers\Product\InvoiceController@ReturnSaleInvoice')->name('ReturnSaleInvoice.show');
 
 
 });

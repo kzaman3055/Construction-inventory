@@ -1,14 +1,14 @@
 <?php
 namespace App\Http\Controllers\POS;
-use App\Models\Product;
 
 use App\Http\Controllers\Controller;
+use App\Models\Category;
 use App\Models\Customer;
 use App\Models\DailyCost;
 use App\Models\DailyCostCategory;
+use App\Models\Product;
 use App\Models\ProductSale;
 use App\Models\Unit;
-
 use Illuminate\Http\Request;
 
 class CustomerController extends Controller
@@ -106,7 +106,7 @@ class CustomerController extends Controller
 
         $data['customerdata'] = Customer::find($id);
         $data['unitdata'] = Unit::all();
-
+        $data['productcagegorydata'] = Category::all();
 
         $data['alldailycost'] = DailyCost::where('customer_id', $id)->get();
 
@@ -123,10 +123,10 @@ class CustomerController extends Controller
         $data['categorydata'] = DailyCostCategory::all();
 
         return view('admin.customer.view_customer_data', $data)
-        ->with('totaldailycost', $totaldailycost)
-        ->with('totalmaterialcost', $totalmaterialcost)
-        ->with('todaydailycost', $todaydailycost)
-        ->with('todaymaterialcost', $todaymaterialcost);
+            ->with('totaldailycost', $totaldailycost)
+            ->with('totalmaterialcost', $totalmaterialcost)
+            ->with('todaydailycost', $todaydailycost)
+            ->with('todaymaterialcost', $todaymaterialcost);
 
     }
     /**
@@ -170,6 +170,24 @@ class CustomerController extends Controller
 
         // Redirect back to the customer details page
         return redirect()->route('manage-customer.index')->with('info', 'Data updated successfully!');
+    }
+
+    public function DailyCostAmount(Request $request, $id)
+    {
+
+        $dailyCost = DailyCost::findOrFail($id);
+        $dailyCost->amount = $request->input('amount');
+        $dailyCost->save();
+
+        return redirect()->back()->with('message', 'Data updated Successfully!');
+
+    }
+
+    public function DailyCostAmountDestroy($id)
+    {
+        $data = DailyCost::findOrFail($id);
+        $action = $data->delete();
+        return redirect()->back()->with('error', 'Data Deleted Successfully!');
     }
 
     /**

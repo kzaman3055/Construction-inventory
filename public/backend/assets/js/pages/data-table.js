@@ -32,6 +32,12 @@ $(function () {
 			'copy', 'csv', 'excel', 'pdf', 'print'
 		]
 	} );
+  $('#return_inv').DataTable( {
+		dom: 'Bfrti',
+		buttons: [
+			'copy', 'csv', 'excel', 'pdf', 'print'
+		]
+	} );
 
 	$('#tickets').DataTable({
 	  'paging'      : true,

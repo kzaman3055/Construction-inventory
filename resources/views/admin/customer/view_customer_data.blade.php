@@ -179,10 +179,12 @@
                                                                             class="fa  fa-wrench
                                                             "></i></button>
                                                                     <div class="dropdown-menu">
-                                                                        <a class="dropdown-item" href=""><i
-                                                                                class="fa fa-pencil"></i> Edit</a>
+                                                                        <a class="dropdown-item" data-toggle="modal"
+                                                                            href="#editModal{{ $dailycost->id }}"><i
+                                                                                class="fa  fa-pencil-square-o
+                                                                            "></i>Edit</a>
 
-                                                                        <form action="" method="POST">
+                                                                        <form action="{{ route('dailyCost.destroy', $dailycost->id) }}" method="POST">
                                                                             @csrf
                                                                             @method('DELETE')
                                                                             <a type="submit"
@@ -193,6 +195,71 @@
                                                                         </form>
                                                                     </div>
                                                                 </div>
+
+
+
+
+
+
+
+                                                                <div class="modal fade" id="editModal{{ $dailycost->id }}"
+                                                                    data-bs-backdrop="static" data-bs-keyboard="false"
+                                                                    tabindex="-1" aria-labelledby="exampleModalCenterTitle"
+                                                                    aria-hidden="true">
+                                                                    <div class="modal-dialog modal-dialog-centered">
+                                                                        <!-- Modal content-->
+                                                                        <div class="modal-content">
+                                                                            <div class="modal-header">
+                                                                                <h4 class="modal-title"><i
+                                                                                        class="fa fa-edit"></i>
+                                                                                    Update Amount</h4>
+                                                                            </div>
+                                                                            {!! Form::open([
+                                                                                'route' => ['dailyCost.update', $dailycost->id],
+                                                                                'method' => 'POST',
+                                                                            ]) !!}
+                                                                            @csrf
+                                                                            <div class="modal-body">
+
+
+                                                                                <div class="row mb-3">
+                                                                                    <div class="col-4">
+                                                                                        <label class="form-label">
+                                                                                            Amount &#2547;
+                                                                                        </label>
+                                                                                    </div>
+                                                                                    <div class="col-8">
+                                                                                        <input type="text"
+                                                                                            name="amount"
+                                                                                            class="form-control"
+                                                                                            value="{{ !empty($dailycost->amount) ? $dailycost->amount : '' }}">
+                                                                                        </div>
+                                                                                </div>
+                                                                            </div>
+                                                                            <div class="modal-footer pull-right">
+                                                                                <button type="button" class="btn btn-danger"
+                                                                                    data-dismiss="modal">Close</button>
+                                                                                {{ Form::submit('Update', ['class' => 'btn btn-success']) }}
+                                                                            </div>
+                                                                            {!! Form::close() !!}
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
                                                             </td>
 
 
@@ -219,6 +286,9 @@
                                                         <th>SL#</th>
 
                                                         <th>Name</th>
+                                                        <th>Category</th>
+                                                        <th>Invoice</th>
+
                                                         <th>Quantity</th>
                                                         <th>Amount</th>
                                                         <th>Date</th>
@@ -233,13 +303,24 @@
                                                             <td>{{ $key + 1 }}</td>
 
 
-
                                                             @foreach ($productdata as $product)
                                                                 @if ($product->product_code == $materiacost->product_code)
                                                                     <td>{{ $product->name }}</td>
                                                                 @endif
                                                             @endforeach
 
+                                                            @foreach ($productdata as $product)
+                                                            @foreach ($productcagegorydata as $productcagegory)
+
+                                                            @if ($product->product_code == $materiacost->product_code && $product->category_id == $productcagegory->id)
+                                                                <td>{{ $productcagegory->name }}</td>
+                                                            @endif
+                                                        @endforeach
+                                                        @endforeach
+
+
+                                                            <td> {{ $materiacost->invoice_code }}
+                                                            </td>
 
 
                                                             @foreach ($unitdata as $unit)
@@ -266,12 +347,12 @@
                                                                             class="fa  fa-wrench
                                                             "></i></button>
                                                                     <div class="dropdown-menu">
-                                                                      
-                                                                                <a class="dropdown-item"
-                                                                                href="{{ route('sale-invoice.show', ['id' => $materiacost->invoice_code]) }}"><i
-                                                                                    class="fa fa-file-text-o
+
+                                                                        <a class="dropdown-item"
+                                                                            href="{{ route('sale-invoice.show', ['id' => $materiacost->invoice_code]) }}"><i
+                                                                                class="fa fa-file-text-o
                                                                                 "></i>Show
-                                                                                Invoice</a>
+                                                                            Invoice</a>
 
                                                                     </div>
                                                                 </div>

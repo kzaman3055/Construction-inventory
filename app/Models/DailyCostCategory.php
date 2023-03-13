@@ -8,4 +8,7 @@ use Illuminate\Database\Eloquent\Model;
 class DailyCostCategory extends Model
 {
     use HasFactory;
+    protected $fillable = [
+        'name',
+    ];
 }

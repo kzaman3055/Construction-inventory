@@ -100,7 +100,14 @@ class DailyCostCategoryController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+
+
+
+
+        $data = DailyCostCategory::findOrFail($id);
+        $input = $request->all();
+        $action = $data->update($input);
+        return redirect()->route('manage-daily-cost-category.index')->with('info', 'Data updated successfully!');
     }
 
     /**

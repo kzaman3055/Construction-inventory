@@ -7,12 +7,12 @@
             <div class="content-header">
                 <div class="d-flex align-items-center">
                     <div class="mr-auto">
-                        <h3 class="page-title">Manage Location</h3>
+                        <h3 class="page-title">Manage Daily Cost Category</h3>
                         <div class="d-inline-block align-items-center">
                             <nav>
                                 <ol class="breadcrumb">
                                     <li class="breadcrumb-item"><i class="mdi mdi-home-outline"></i></a></li>
-                                    <li class="breadcrumb-item active" aria-current="page">Add & Manage Location</li>
+                                    <li class="breadcrumb-item active" aria-current="page">Add & Manage Daily Cost Category</li>
                                 </ol>
                             </nav>
                         </div>
@@ -138,10 +138,10 @@
                                             </tr>
                                         </thead>
                                         <tbody>
-                                            @foreach ($alldata as $key => $locations)
+                                            @foreach ($alldata as $key => $dailycost)
                                                 <tr>
                                                     <td>{{ $key + 1 }}</td>
-                                                    <td>{{ $locations->name }}</td>
+                                                    <td>{{ $dailycost->name }}</td>
                                                     </td>
                                                     <td>
                                                         <div class="btn-group mb-5">
@@ -155,10 +155,10 @@
 
                                                             <div class="dropdown-menu">
                                                                 <a class="dropdown-item"
-                                                                    href="{{ route('manage-location.edit', $locations->id) }}"><i
+                                                                    href="{{ route('manage-daily-cost-category.edit', $dailycost->id) }}"><i
                                                                         class="fa fa-pencil"></i> Edit</a>
                                                                 <form
-                                                                    action="{{ route('manage-location.destroy', $locations->id) }}"
+                                                                    action="{{ route('dailyCost.destroy', $dailycost->id) }}"
                                                                     method="POST">
                                                                     @csrf
                                                                     @method('DELETE')
