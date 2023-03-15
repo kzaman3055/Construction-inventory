@@ -87,7 +87,7 @@
                     </div>
                     <div class="text-center p-t-136">
                         <a class="txt2" href="https://www.theriserit.com">
-IMS; Design by   <i class="fa fa-long-arrow-right m-l-5" aria-hidden="true"></i> The Riser IT
+IMS <i class="fa fa-long-arrow-right m-l-5" aria-hidden="true"></i> The Riser IT
                         </a>
                     </div>
                 </form>

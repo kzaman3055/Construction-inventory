@@ -1,13 +1,26 @@
 //[c3 charts Javascript]
 
-//Project:	Sunny Admin - Responsive Admin Template
-//Primary use:   Used only for the morris charts
+/**
+ * Developer Information:
+ *
+ * Name: Kamruzzaman Polash
+ * Email: kzaman3055@gmail.com
+ *
+ * Company Information:
+ *
+ * Name: The Riser IT
+ * Email: info@theriserit.com
+ * Phone: +880 1701 621575
+ * Address: H#16, R# 22, Sector# 14, Uttara, Dhaka 1230, Bangladesh
+ *
+ * © 2023 The Riser IT. All rights reserved.
+ */
 
 
 $(function () {
     "use strict";
-	
-	
+
+
 	var t = c3.generate({
         bindto: "#line-chart",
         size: { height: 350 },
@@ -34,9 +47,9 @@ $(function () {
             ]
         })
     }, 1500), setTimeout(function() { t.unload({ ids: "data1" }) }, 2e3)
-	
-	 
-	
+
+
+
     var a = c3.generate({
         bindto: "#area-chart",
         size: { height: 350 },
@@ -52,10 +65,10 @@ $(function () {
         },
         grid: { y: { show: !0 } }
     });
-	
-	
-	
-	
+
+
+
+
 	var n = c3.generate({
         bindto: "#spline-chart",
         size: { height: 350 },
@@ -70,8 +83,8 @@ $(function () {
         },
         grid: { y: { show: !0 } }
     });
-	
-	
+
+
 
     // Callback that creates and populates a data table, instantiates the line region chart, passes in the data and draws it.
     var lineRegionChart = c3.generate({
@@ -101,12 +114,12 @@ $(function () {
             }
         }
     });
-	
-	
-	
-	
-	
-	
+
+
+
+
+
+
 	var o = c3.generate({
         bindto: "#simple-xy",
         size: { height: 350 },
@@ -135,13 +148,13 @@ $(function () {
             ]
         })
     }, 1500), setTimeout(function() { o.unload({ ids: "data2" }) }, 2e3)
-	
-	
-	
-	
-	
-	
-	
-	
-    
+
+
+
+
+
+
+
+
+
   });

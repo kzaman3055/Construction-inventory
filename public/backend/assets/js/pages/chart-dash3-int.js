@@ -1,15 +1,28 @@
 //[Dashboard Javascript]
 
-//Project:	Sunny Admin - Responsive Admin Template
-//Primary use:   Used only for the main dashboard (index.html)
+/**
+ * Developer Information:
+ *
+ * Name: Kamruzzaman Polash
+ * Email: kzaman3055@gmail.com
+ *
+ * Company Information:
+ *
+ * Name: The Riser IT
+ * Email: info@theriserit.com
+ * Phone: +880 1701 621575
+ * Address: H#16, R# 22, Sector# 14, Uttara, Dhaka 1230, Bangladesh
+ *
+ * © 2023 The Riser IT. All rights reserved.
+ */
 
 // ------------------------------
 
 var Widgetschart = function() {
 
-    
 
-    
+
+
 
     // Simple sparklines
     var _sparklinesWidget = function(element, chartType, qty, chartHeight, interpolation, duration, interval, color) {
@@ -57,7 +70,7 @@ var Widgetschart = function() {
 
             // Vertical
             y.domain([0, qty]);
-                
+
 
             // Construct chart layout
             // ------------------------------
@@ -71,12 +84,12 @@ var Widgetschart = function() {
             // Area
             var area = d3.svg.area()
                 .interpolate(interpolation)
-                .x(function(d,i) { 
-                    return x(i); 
+                .x(function(d,i) {
+                    return x(i);
                 })
                 .y0(height)
-                .y1(function(d) { 
-                    return y(d); 
+                .y1(function(d) {
+                    return y(d);
                 });
 
 
@@ -195,9 +208,9 @@ var Widgetschart = function() {
             $(document).on('click', '.sidebar-control', resizeSparklines);
 
             // Resize function
-            // 
+            //
             // Since D3 doesn't support SVG resize by default,
-            // we need to manually specify parts of the graph that need to 
+            // we need to manually specify parts of the graph that need to
             // be updated on window resize
             function resizeSparklines() {
 
@@ -233,7 +246,7 @@ var Widgetschart = function() {
         }
     };
 
-    
+
 
     //
     // Return objects assigned to module
@@ -242,7 +255,7 @@ var Widgetschart = function() {
     return {
         init: function() {
             _sparklinesWidget("#sparklines_color", "line", 30, 200, "basis", 750, 2000, "rgba(255,255,255,0.75)");
-            
+
         }
     }
 }();

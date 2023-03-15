@@ -1,15 +1,28 @@
 //[c3 charts Javascript]
 
-//Project:	Sunny Admin - Responsive Admin Template
-//Primary use:   Used only for the morris charts
+/**
+ * Developer Information:
+ *
+ * Name: Kamruzzaman Polash
+ * Email: kzaman3055@gmail.com
+ *
+ * Company Information:
+ *
+ * Name: The Riser IT
+ * Email: info@theriserit.com
+ * Phone: +880 1701 621575
+ * Address: H#16, R# 22, Sector# 14, Uttara, Dhaka 1230, Bangladesh
+ *
+ * © 2023 The Riser IT. All rights reserved.
+ */
 
 
 $(function () {
     "use strict";
-	
-	
-	
-	
+
+
+
+
 	 var n = c3.generate({
         bindto: "#column-oriented",
         size: { height: 350 },
@@ -23,10 +36,10 @@ $(function () {
         },
         grid: { y: { show: !0 } }
     });
-	
-	
-	
-	
+
+
+
+
 	var a = c3.generate({
         bindto: "#data-color",
         size: { height: 350 },
@@ -42,9 +55,9 @@ $(function () {
         },
         grid: { y: { show: !0 } }
     });
-	
-	
-	
+
+
+
 	var a = c3.generate({
         bindto: "#data-order",
         size: { height: 350 },
@@ -80,9 +93,9 @@ $(function () {
             ["data1", "data2", "data3", "data4", "data5"]
         ])
     }, 3e3)
-	
-	
-	
+
+
+
 	var o = c3.generate({
         bindto: "#row-oriented",
         size: { height: 350 },
@@ -100,10 +113,10 @@ $(function () {
         },
         grid: { y: { show: !0 } }
     });
-	
-	
-	
-	
+
+
+
+
 	var o = c3.generate({
         bindto: "#category-data",
         size: { height: 350 },
@@ -155,9 +168,9 @@ $(function () {
             ]
         })
     }, 4e3), setTimeout(function() { o.load({ url: "../c3_string_x.csv" }) }, 5e3);
-	
-	
-	
-	
-    
+
+
+
+
+
   });

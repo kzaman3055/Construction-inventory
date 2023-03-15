@@ -1,7 +1,20 @@
 //[calendar Javascript]
 
-//Project:	Sunny Admin - Responsive Admin Template
-//Primary use:   Used only for the event calendar
+/**
+ * Developer Information:
+ *
+ * Name: Kamruzzaman Polash
+ * Email: kzaman3055@gmail.com
+ *
+ * Company Information:
+ *
+ * Name: The Riser IT
+ * Email: info@theriserit.com
+ * Phone: +880 1701 621575
+ * Address: H#16, R# 22, Sector# 14, Uttara, Dhaka 1230, Bangladesh
+ *
+ * © 2023 The Riser IT. All rights reserved.
+ */
 
 
 !function($) {
@@ -20,7 +33,7 @@
 
 
     /* on drop */
-    CalendarApp.prototype.onDrop = function (eventObj, date) { 
+    CalendarApp.prototype.onDrop = function (eventObj, date) {
         var $this = this;
             // retrieve the dropped element's stored Event Object
             var originalEventObject = eventObj.data('eventObject');
@@ -95,14 +108,14 @@
                         end: end,
                         allDay: false,
                         className: categoryClass
-                    }, true);  
+                    }, true);
                     $this.$modal.modal('hide');
                 }
                 else{
                     alert('You have to give a title to your event');
                 }
                 return false;
-                
+
             });
             $this.$calendarObj.fullCalendar('unselect');
     },
@@ -136,7 +149,7 @@
         var today = new Date($.now());
 
         var defaultEvents =  [{
-                title: 'Released Ample Admin!',                
+                title: 'Released Ample Admin!',
                 start: '2017-08-08',
 				end: '2017-08-08',
                 className: 'bg-info'
@@ -146,13 +159,13 @@
                 end: today,
                 className: 'bg-danger'
             }, {
-                title: 'This is your birthday',                
+                title: 'This is your birthday',
                 start: '2017-09-08',
 				end: '2017-09-08',
                 className: 'bg-info'
             },
               {
-                title: 'Hanns birthday',                
+                title: 'Hanns birthday',
                 start: '2017-10-08',
 				end: '2017-10-08',
                 className: 'bg-danger'
@@ -166,10 +179,10 @@
         $this.$calendarObj = $this.$calendar.fullCalendar({
             slotDuration: '00:15:00', /* If we want to split day time each 15minutes */
             minTime: '08:00:00',
-            maxTime: '19:00:00',  
-            defaultView: 'month',  
-            handleWindowResize: true,   
-             
+            maxTime: '19:00:00',
+            defaultView: 'month',
+            handleWindowResize: true,
+
             header: {
                 left: 'prev,next today',
                 center: 'title',
@@ -200,12 +213,12 @@
 
    //init CalendarApp
     $.CalendarApp = new CalendarApp, $.CalendarApp.Constructor = CalendarApp
-    
+
 }(window.jQuery),// End of use strict
 
 //initializing CalendarApp
 function($) {
     "use strict";
     $.CalendarApp.init()
-	
+
 }(window.jQuery);// End of use strict

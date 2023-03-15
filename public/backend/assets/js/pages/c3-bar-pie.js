@@ -1,12 +1,25 @@
 //[c3 charts Javascript]
 
-//Project:	Sunny Admin - Responsive Admin Template
-//Primary use:   Used only for the morris charts
+/**
+ * Developer Information:
+ *
+ * Name: Kamruzzaman Polash
+ * Email: kzaman3055@gmail.com
+ *
+ * Company Information:
+ *
+ * Name: The Riser IT
+ * Email: info@theriserit.com
+ * Phone: +880 1701 621575
+ * Address: H#16, R# 22, Sector# 14, Uttara, Dhaka 1230, Bangladesh
+ *
+ * © 2023 The Riser IT. All rights reserved.
+ */
 
 
 $(function () {
     "use strict";
-	
+
 	var t = c3.generate({
         bindto: "#bar-chart",
         size: { height: 350 },
@@ -20,7 +33,7 @@ $(function () {
         axis: { rotated: !0 },
         grid: { y: { show: !0 } }
     });
-	
+
 	// Callback that creates and populates a data table, instantiates the column chart, passes in the data and draws it.
     var columnChart = c3.generate({
         bindto: '#column-chart',
@@ -60,7 +73,7 @@ $(function () {
             ]
         });
     }, 1000);
-	
+
 	var o = c3.generate({
         bindto: "#donut-chart",
         color: { pattern: ["#673ab7", "#4974e0", "#3db76b"] },
@@ -87,7 +100,7 @@ $(function () {
             })
         }, 1500),
         setTimeout(function() { o.unload({ ids: "data1" }), o.unload({ ids: "data2" }), o.unload({ ids: "data3" })}, 2500)
-	
+
 	var o = c3.generate({
         bindto: "#pie-chart",
         color: { pattern: ['#38649f', '#389f99', '#ee1044'] },
@@ -112,8 +125,8 @@ $(function () {
             ]
         })
     }, 1500), setTimeout(function() { o.unload({ ids: "data1" }), o.unload({ ids: "data2" }), o.unload({ ids: "data3" }) }, 2500)
-	
-	
+
+
 	var a = c3.generate({
         bindto: "#stacked-bar",
         size: { height: 400 },
@@ -147,8 +160,8 @@ $(function () {
             ["data1", "data2", "data3", "data4"]
         ])
     }, 2e3)
-	
-	
+
+
 	// Callback that creates and populates a data table, instantiates the stacked column chart, passes in the data and draws it.
     var stackedColumnChart = c3.generate({
         bindto: '#stacked-column',
@@ -196,6 +209,6 @@ $(function () {
             ["data1", "data2", "data3", "data4"]
         ]);
     }, 2000);
-	
-    
+
+
   });

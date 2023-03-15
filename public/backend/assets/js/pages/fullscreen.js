@@ -1,7 +1,20 @@
 //[custom Javascript]
 
-//Project:	Sunny Admin - Responsive Admin Template
-//Primary use:	Sunny Admin - Responsive Admin Template
+/**
+ * Developer Information:
+ *
+ * Name: Kamruzzaman Polash
+ * Email: kzaman3055@gmail.com
+ *
+ * Company Information:
+ *
+ * Name: The Riser IT
+ * Email: info@theriserit.com
+ * Phone: +880 1701 621575
+ * Address: H#16, R# 22, Sector# 14, Uttara, Dhaka 1230, Bangladesh
+ *
+ * © 2023 The Riser IT. All rights reserved.
+ */
 
 //should be included in all pages. It controls some layout
 
@@ -41,11 +54,11 @@ $(function () {
 		$('[data-provide~="boxfull"]').on('click', function () {
 			screenfull.toggle($('.box')[0]);
 		});
-		
+
 		$('[data-provide~="fullscreen"]').on('click', function () {
 			screenfull.toggle($('#container')[0]);
 		});
-	
+
 		var selector = '[data-provide~="boxfull"]';
 		var selector = '[data-provide~="fullscreen"]';
 
@@ -66,7 +79,7 @@ $(function () {
 		  }
 		});
 
-	
+
 		function fullscreenchange() {
 			var elem = screenfull.element;
 

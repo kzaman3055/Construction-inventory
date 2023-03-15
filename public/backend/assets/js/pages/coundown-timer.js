@@ -1,11 +1,24 @@
 //[timer contact Javascript]
 
-//Project:	Sunny Admin - Responsive Admin Template
-
+/**
+ * Developer Information:
+ *
+ * Name: Kamruzzaman Polash
+ * Email: kzaman3055@gmail.com
+ *
+ * Company Information:
+ *
+ * Name: The Riser IT
+ * Email: info@theriserit.com
+ * Phone: +880 1701 621575
+ * Address: H#16, R# 22, Sector# 14, Uttara, Dhaka 1230, Bangladesh
+ *
+ * © 2023 The Riser IT. All rights reserved.
+ */
 $(function () {
     "use strict";
 
-    
+
 		// set the date we're counting down to
 		var target_date = new Date('Jan, 31, 2019').getTime();
 
@@ -33,8 +46,8 @@ $(function () {
 			seconds = parseInt(seconds_left % 60);
 
 			// format countdown string + set tag value
-			countdown.innerHTML = '<div class="days timer col mb-30"> <div class="b-1 p-30 rounded">' + days +  ' <div class="text">Days</div></div></div> <div class="hours timer col mb-30"> <div class="b-1 p-30 rounded">' + hours + ' <div class="text">Hours</div></div></div> <div class="minutes timer col mb-30"> <div class="b-1 p-30 rounded">' + minutes + ' <div class="text">Minutes</div></div></div> <div class="seconds timer col mb-30"> <div class="b-1 p-30 rounded">' + seconds + ' <div class="text">Seconds</div></div></div>';  
+			countdown.innerHTML = '<div class="days timer col mb-30"> <div class="b-1 p-30 rounded">' + days +  ' <div class="text">Days</div></div></div> <div class="hours timer col mb-30"> <div class="b-1 p-30 rounded">' + hours + ' <div class="text">Hours</div></div></div> <div class="minutes timer col mb-30"> <div class="b-1 p-30 rounded">' + minutes + ' <div class="text">Minutes</div></div></div> <div class="seconds timer col mb-30"> <div class="b-1 p-30 rounded">' + seconds + ' <div class="text">Seconds</div></div></div>';
 
 		}, 1000);
-	
+
   }); // End of use strict

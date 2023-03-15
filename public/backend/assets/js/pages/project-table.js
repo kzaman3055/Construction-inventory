@@ -1,11 +1,24 @@
 //[Data Table Javascript]
 
-//Project:	Lion Admin - Responsive Admin Template
-//Primary use:   Used only for the Data Table
+/**
+ * Developer Information:
+ *
+ * Name: Kamruzzaman Polash
+ * Email: kzaman3055@gmail.com
+ *
+ * Company Information:
+ *
+ * Name: The Riser IT
+ * Email: info@theriserit.com
+ * Phone: +880 1701 621575
+ * Address: H#16, R# 22, Sector# 14, Uttara, Dhaka 1230, Bangladesh
+ *
+ * © 2023 The Riser IT. All rights reserved.
+ */
 
 $(function () {
     "use strict";
-	
+
     $(document).ready(function () {
 
          var table = $('#project-table').DataTable({
@@ -67,7 +80,7 @@ $(function () {
      });
 
     function format(d){
-        
+
          // `d` is the original data object for the row
          return '<table cellpadding="6" cellspacing="0" border="0" style="padding-left:50px; width:100%;">' +
             '<tr>'+
@@ -90,7 +103,7 @@ $(function () {
 				'<td>Action:</td>'+
 				'<td>'+d.action+'</td>'+
 			'</tr>'+
-         '</table>';  
+         '</table>';
     }
 
     var testdata = {
@@ -99,7 +112,7 @@ $(function () {
     "name": "Sharepoint Upgrade<br><small class='text-muted'><i>Budget: 5,000<i></small>",
 	"est": "<td><div class='progress progress-sm'><div class='progress-bar progress-bar-info progress-bar-striped' role='progressbar' aria-valuenow='60' aria-valuemin='0' aria-valuemax='100' style='width: 60%'></div></div></td>",
 	"contacts": "<div class='project-members'><a href='javascript:void(0)'><img src='../images/avatar/1.jpg' class='offline' alt='user'></a> </div> ",
-	"status": "<span class='badge badge-success'>Active</span>",	
+	"status": "<span class='badge badge-success'>Active</span>",
 	"tracker": "<button type='button' class='btn btn-sm btn-toggle btn-info active' data-toggle='button' aria-pressed='true'><span class='handle'></span></button>",
 	"starts": "01-21-2017",
 	"ends": "<strong>02-30-2018</strong>",
@@ -116,7 +129,7 @@ $(function () {
 	"ends": "<strong>02-30-2018</strong>",
 	"comments": "This is a blank comments area, used to add comments and keep notes",
 	"action": "<button class='btn btn-xs'>Open case</button> <button class='btn btn-xs btn-danger pull-right' style='margin-left:5px'>Delete Record</button> <button class='btn btn-xs btn-success pull-right'>Save Changes</button> "
-	},   
+	},
 	{
 	"name": "Car Industry Studies<br><small class='text-muted'><i>Budget: 1,000<i></small>",
 	"est": "<td><div class='progress progress-sm'><div class='progress-bar progress-bar-primary progress-bar-striped' role='progressbar' aria-valuenow='55' aria-valuemin='0' aria-valuemax='100' style='width: 55%'></div></div></td>",
@@ -127,7 +140,7 @@ $(function () {
 	"ends": "<strong>03-03-2018</strong>",
 	"comments": "This is a blank comments area, used to add comments and keep notes",
 	"action": "<button class='btn btn-xs'>Open case</button> <button class='btn btn-xs btn-danger pull-right' style='margin-left:5px'>Delete Record</button> <button class='btn btn-xs btn-success pull-right'>Save Changes</button> "
-	},   
+	},
 	{
 	"name": "Update all forms <br><small class='text-muted'><i>Budget: 2,000<i></small>",
 	"est": "<td><div class='progress progress-sm'><div class='progress-bar progress-bar-warning progress-bar-striped' role='progressbar' aria-valuenow='68' aria-valuemin='0' aria-valuemax='100' style='width: 68%'></div></div></td>",
@@ -138,7 +151,7 @@ $(function () {
 	"ends": "<strong>03-15-2018</strong>",
 	"comments": "This is a blank comments area, used to add comments and keep notes",
 	"action": "<button class='btn btn-xs'>Open case</button> <button class='btn btn-xs btn-danger pull-right' style='margin-left:5px'>Delete Record</button> <button class='btn btn-xs btn-success pull-right'>Save Changes</button> "
-	},   
+	},
 	{
 	"name": "Preliminary studies of client intel<br><small class='text-muted'><i>Budget: 3,500<i></small>",
 	"est": "<td><div class='progress progress-sm'><div class='progress-bar progress-bar-danger progress-bar-striped' role='progressbar' aria-valuenow='10' aria-valuemin='0' aria-valuemax='100' style='width: 10%'></div></div></td>",
@@ -149,8 +162,8 @@ $(function () {
 	"ends": "<strong>06-20-2018</strong>",
 	"comments": "This is a blank comments area, used to add comments and keep notes",
 	"action": "<button class='btn btn-xs'>Open case</button> <button class='btn btn-xs btn-danger pull-right' style='margin-left:5px'>Delete Record</button> <button class='btn btn-xs btn-success pull-right'>Save Changes</button> "
-	},    
+	},
     ]
     };
-	
+
   }); // End of use strict
