@@ -15,7 +15,7 @@
                             <nav>
                                 <ol class="breadcrumb">
                                     <li class="breadcrumb-item"><i class="mdi mdi-home-outline"></i></a></li>
-                                    <li class="breadcrumb-item active" aria-current="page">Add & Manage Stock</li>
+                                    <li class="breadcrumb-item active" aria-current="page">Add to Stock</li>
                                 </ol>
                             </nav>
                         </div>
@@ -98,11 +98,11 @@
                                                                     <div class="controls">
                                                                         <input type="number" name="quantity[]"
                                                                             class="form-control" value="" required
-                                                                            placeholder="Enter Product Name" min="1">
+                                                                            placeholder="Enter Quantity" min="1">
                                                                     </div>
                                                                 </div>
                                                                 <div class="form-group">
-                                                                    <label>Price</label>
+                                                                    <label>Unit Price</label>
                                                                     <div class="controls">
                                                                         <input type="number" name="price[]"
                                                                             class="form-control" value="" required
@@ -176,7 +176,7 @@
                                                                     <div class="controls">
                                                                         <input type="number" name="pay"
                                                                             class="form-control" value="" required
-                                                                            placeholder="Enter Product Name"
+                                                                            placeholder="Enter Pay Amount"
                                                                             min="1">
                                                                     </div>
                                                                 </div>
@@ -238,13 +238,13 @@
                                                          <div class="form-group">
                                                             <label>Quantity</label>
                                                             <div class="controls">
-                                                              <input type="number" name="quantity[]" class="form-control" value="" required placeholder="Enter Product Name" min="1">
+                                                              <input type="number" name="quantity[]" class="form-control" value="" required placeholder="Enter Quantity" min="1">
                                                             </div>
                                                           </div>
                                                           <div class="form-group">
-                                                            <label>Price</label>
+                                                            <label>Unit Price</label>
                                                             <div class="controls">
-                                                              <input type="number" name="price[]" class="form-control" value="" required placeholder="Enter Product Name" min="1">
+                                                              <input type="number" name="price[]" class="form-control" value="" required placeholder="Enter Unit Price" min="1">
                                                             </div>
                                                           </div>
 

@@ -24,14 +24,14 @@
         <li class="treeview">
           <a href="#">
             <i data-feather="users"></i>
-            <span>View Contacts</span>
+            <span>Contacts</span>
             <span class="pull-right-container">
               <i class="fa fa-angle-right pull-right"></i>
             </span>
           </a>
           <ul class="treeview-menu">
-            <li><a href="{{URL::To('manage-shop')}}"><i class="ti-more"></i>View Shop</a></li>
-            <li><a href="{{URL::To('manage-supplier')}}"><i class="ti-more"></i>View Supplier</a></li>
+            {{-- <li><a href="{{URL::To('manage-shop')}}"><i class="ti-more"></i>Shop</a></li> --}}
+            <li><a href="{{URL::To('manage-supplier')}}"><i class="ti-more"></i>Supplier</a></li>
 
           </ul>
         </li>
@@ -44,7 +44,7 @@
             </span>
           </a>
           <ul class="treeview-menu">
-            <li><a href="{{URL::To('manage-customer')}}"><i class="ti-more"></i>View Project</a></li>
+            <li><a href="{{URL::To('manage-customer')}}"><i class="ti-more"></i>Project</a></li>
           </ul>
         </li>
 
@@ -65,39 +65,28 @@
 
             <li><a href="{{URL::To('manage-product-purchase')}}"><i class="ti-more"></i>Manage Stock</a></li>
 
-            <li><a href="{{URL::To('manage-product')}}"><i class="ti-more"></i>Manage Product</a></li>
-
-            <li class="treeview">
-              <a href="#">Product Data
-                <span class="pull-right-container">
-              <i class="fa fa-angle-right pull-right"></i>
-            </span>
-              </a>
-              <ul class="treeview-menu">
-                <li><a href="{{URL::To('manage-category')}}"><i class="ti-more"></i>View Category</a></li>
+            <li><a href="{{URL::To('manage-product')}}"><i class="ti-more"></i>Manage Product/Material</a></li>
 
 
 
-              </ul>
-            </li>
           </ul>
         </li>
 
 
-        <li class="header nav-small-cap">Additional Panel</li>
         <li class="treeview">
           <a href="#">
             <i data-feather="grid"></i>
-            <span>Other</span>
+            <span>Prerequisite</span>
             <span class="pull-right-container">
               <i class="fa fa-angle-right pull-right"></i>
             </span>
           </a>
           <ul class="treeview-menu">
-            <li><a href="{{URL::To('manage-location')}}"><i class="ti-more"></i>View Location</a></li>
-            <li><a href="{{URL::To('manage-daily-cost-category')}}"><i class="ti-more"></i>View Daily Cost Category</a></li>
 
-            <li><a href="{{URL::To('manage-unit')}}"><i class="ti-more"></i>View Unit</a></li>
+            {{-- <li><a href="{{URL::To('manage-location')}}"><i class="ti-more"></i>Location</a></li> --}}
+            <li><a href="{{URL::To('manage-daily-cost-category')}}"><i class="ti-more"></i>Daily Cost Category</a></li>
+            <li><a href="{{URL::To('manage-category')}}"><i class="ti-more"></i>Product Category</a></li>
+            <li><a href="{{URL::To('manage-unit')}}"><i class="ti-more"></i>Product Unit</a></li>
 
           </ul>
         </li>
@@ -126,12 +115,12 @@
         </li>
       </ul>
     </section>
-	<div class="sidebar-footer">
+	{{-- <div class="sidebar-footer">
 		<!-- item-->
 		<a href="javascript:void(0)" class="link" data-toggle="tooltip" title="" data-original-title="Settings" aria-describedby="tooltip92529"><i class="ti-settings"></i></a>
 		<!-- item-->
 		<a href="mailbox_inbox.html" class="link" data-toggle="tooltip" title="" data-original-title="Email"><i class="ti-email"></i></a>
 		<!-- item-->
 		<a href="javascript:void(0)" class="link" data-toggle="tooltip" title="" data-original-title="Logout"><i class="ti-lock"></i></a>
-	</div>
+	</div> --}}
   </aside>

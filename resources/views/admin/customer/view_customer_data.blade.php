@@ -148,8 +148,10 @@
                                                         <th>Amount</th>
                                                         <th>Date</th>
 
+                                                        @if ($customerdata->status == 1)
 
                                                         <th>Action</th>
+                                                        @endif
                                                     </tr>
                                                 </thead>
                                                 <tbody>
@@ -169,6 +171,7 @@
                                                             <td>{{ $dailycost->created_at->format('d F Y') }}</td>
 
 
+                                                            @if ($customerdata->status == 1)
 
 
                                                             <td>
@@ -261,7 +264,7 @@
 
 
                                                             </td>
-
+@endif
 
                                                         </tr>
                                                     @endforeach

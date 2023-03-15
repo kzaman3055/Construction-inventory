@@ -12,7 +12,7 @@
                             <nav>
                                 <ol class="breadcrumb">
                                     <li class="breadcrumb-item"><i class="mdi mdi-home-outline"></i></a></li>
-                                    <li class="breadcrumb-item active" aria-current="page">Add & Manage Stock</li>
+                                    <li class="breadcrumb-item active" aria-current="page">Transfer Stock</li>
                                 </ol>
                             </nav>
                         </div>
@@ -67,18 +67,17 @@
                                                             <div class="col-md-6">
                                                                 <div class="form-group">
                                                                     <label>Customer/Project</label>
-                                                                    <select name="customer_id"
-                                                                        class="form-control customer-select select2"
-                                                                        style="width: 100%;" required>
-                                                                        <option value="" selected="selected"
-                                                                            disabled="">Select Customer/Project</option>
+                                                                    <select name="customer_id" class="form-control customer-select select2" style="width: 100%;" required>
+                                                                        <option value="" selected="selected" disabled="">Select Customer/Project</option>
                                                                         @foreach ($customerdata as $key => $customer)
-                                                                            <option value="{{ $customer->id }}">
-                                                                                {{ $customer->name }} Mobile:
-                                                                                {{ $customer->mobile }}
-                                                                            </option>
+                                                                            @if ($customer->status != 0)
+                                                                                <option value="{{ $customer->id }}">
+                                                                                    {{ $customer->name }} Mobile: {{ $customer->mobile }}
+                                                                                </option>
+                                                                            @endif
                                                                         @endforeach
                                                                     </select>
+
                                                                 </div>
                                                                 <div class="form-group">
                                                                     <label>Product</label>
@@ -112,7 +111,7 @@
                                                                     </div>
                                                                 </div>
                                                                 <div class="form-group">
-                                                                    <label>Price</label>
+                                                                    <label>Unit Price</label>
                                                                     <div class="controls">
                                                                         <input type="number" name="price[]"
                                                                             class="form-control" value="" required
@@ -218,7 +217,7 @@
 
 
                                                           <div class="form-group">
-                                                            <label>Price</label>
+                                                            <label>Unit Price</label>
                                                             <div class="controls">
                                                               <input type="number" name="price[]" class="form-control" value="" required placeholder="Enter Unit Price" min="1">
                                                             </div>

@@ -23,19 +23,19 @@ $(function () {
 	$('#example').DataTable( {
 		dom: 'Bfrtip',
 		buttons: [
-			'copy', 'csv', 'excel', 'pdf', 'print'
+ 'excel', 'pdf', 'print'
 		]
 	} );
   $('#example6').DataTable( {
 		dom: 'Bfrtip',
 		buttons: [
-			'copy', 'csv', 'excel', 'pdf', 'print'
+		 'excel', 'pdf', 'print'
 		]
 	} );
   $('#return_inv').DataTable( {
 		dom: 'Bfrti',
 		buttons: [
-			'copy', 'csv', 'excel', 'pdf', 'print'
+		'excel', 'pdf', 'print'
 		]
 	} );
 

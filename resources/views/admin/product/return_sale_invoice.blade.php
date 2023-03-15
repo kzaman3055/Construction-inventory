@@ -106,8 +106,8 @@
 
                                                                 <div class="dropdown-menu">
 
-                                                                    <a class="dropdown-item" href=""><i
-                                                                            class="fa fa-pencil"></i> Edit</a>
+                                                                    <a class="dropdown-item" href="{{ route('returnproduct.update', $sale->id) }}"><i
+                                                                            class="fa  fa-undo"></i> Full Return</a>
 
                                                                 </div>
                                                             </div>

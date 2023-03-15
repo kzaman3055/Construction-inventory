@@ -164,6 +164,7 @@ Route::get('/invoices/purchase/{id}', 'App\Http\Controllers\Product\InvoiceContr
 Route::get('/invoices/sale/{id}', 'App\Http\Controllers\Product\InvoiceController@showSaleInvoice')->name('sale-invoice.show');
 
 Route::post('/Return/update', 'App\Http\Controllers\Product\InvoiceController@ReturnUpdate')->name('return.update');
+Route::get('/return-product/update/{id}', 'App\Http\Controllers\Product\InvoiceController@ReturnProductUpdate')->name('returnproduct.update');
 
 
 

@@ -272,7 +272,7 @@
                                                             @if ($customers->status == 1)
                                                                 <span class="badge badge-success">Active</span>
                                                             @else
-                                                                <span class="badge badge-danger">Closed</span>
+                                                                <span class="badge badge-primary">Closed</span>
                                                             @endif
                                                         </td>
                                                         <td>{{ $customers->square_feet }}</td>
@@ -289,12 +289,12 @@
                                                                         class="fa  fa-wrench
                                                             "></i></button>
                                                                 <div class="dropdown-menu">
+                                                                    @if ($customers->status == 1)
+
                                                                     <a class="dropdown-item"
                                                                         href="{{ route('manage-customer.edit', $customers->id) }}"><i
                                                                             class="fa fa-pencil"></i> Edit</a>
-                                                                    <a class="dropdown-item" data-toggle="modal"
-                                                                        href="#editModal{{ $customers->id }}"><i
-                                                                            class="fa fa-check"></i>Status</a>
+
                                                                     <a class="dropdown-item" data-toggle="modal"
                                                                         href="#editModal1{{ $customers->id }}"><i
                                                                             class="fa fa-check"></i>Assign Amount</a>
@@ -302,24 +302,42 @@
                                                                         href="{{ route('manage-customer.show', $customers->id) }}"><i
                                                                             class="fa fa-pencil"></i> Add Daily Cost</a>
 
-                                                                     <a class="dropdown-item" href="{{ route('project.showdata',  $customers->id) }}">
+
+
+                                                                            <a class="dropdown-item" href="{{ route('project.showdata',  $customers->id) }}">
                                                                                 <i class="fa fa-pencil"></i> View all cost
                                                                               </a>
 
-
+                                                                            <a class="dropdown-item" data-toggle="modal"
+                                                                            href="#editModal{{ $customers->id }}"><i
+                                                                                class="fa fa-check"></i>Status</a>
 
 
                                                                             <form
-                                                                        action="{{ route('manage-customer.destroy', $customers->id) }}"
-                                                                        method="POST">
-                                                                        @csrf
-                                                                        @method('DELETE')
-                                                                        <a type="submit"
-                                                                            class="dropdown-item show-alert-delete-box"> <i
-                                                                                title="Delete"
-                                                                                class="fa fa-trash"></i>Delete
-                                                                        </a>
-                                                                    </form>
+                                                                            action="{{ route('manage-customer.destroy', $customers->id) }}"
+                                                                            method="POST">
+                                                                            @csrf
+                                                                            @method('DELETE')
+                                                                            <a type="submit"
+                                                                                class="dropdown-item show-alert-delete-box"> <i
+                                                                                    title="Delete"
+                                                                                    class="fa fa-trash"></i>Delete
+                                                                            </a>
+                                                                        </form>
+
+                                                                            @else
+                                                                            <a class="dropdown-item" data-toggle="modal"
+                                                                            href="#editModal{{ $customers->id }}"><i
+                                                                                class="fa fa-check"></i>Status</a>
+                                                                     <a class="dropdown-item" href="{{ route('project.showdata',  $customers->id) }}">
+                                                                                <i class="fa fa-pencil"></i> View all cost
+                                                                              </a>
+                                                                              @endif
+
+
+
+
+
                                                                 </div>
                                                             </div>
                                                             <!-- Status Modal -->
@@ -362,7 +380,7 @@
                                                                                                 Active</option>
                                                                                             <option value="0"
                                                                                                 {{ $customers->status == '0' ? 'selected' : '' }}>
-                                                                                                Deactive</option>
+                                                                                                Closed</option>
                                                                                         </select>
                                                                                     </div>
                                                                                 </div>

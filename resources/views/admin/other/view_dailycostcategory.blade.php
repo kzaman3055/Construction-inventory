@@ -205,7 +205,7 @@
                             <span class="btn btn-success addeventmore"><i
                                     class=" fa fa-plus-circle "></i> </span>
                                     <span class="btn btn-danger removeeventmore"><i
-                                        class=" fa fa-plus-circle "></i> </span>
+                                        class="fa fa-minus-circle "></i> </span>
                         </div><!-- End col-md-5 -->
 
                 </div>
