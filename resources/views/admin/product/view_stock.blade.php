@@ -37,25 +37,25 @@
                                 <ul class="nav nav-tabs customtab2" role="tablist">
                                     <li class="nav-item"> <a class="nav-link active" data-toggle="tab" href="#manage_stock"
                                             role="tab"><span class="hidden-sm-up"><i class="ion-person"></i></span>
-                                            <span class="hidden-xs-down">New Purchase</span></a>
+                                            <span class="hidden-xs-down">New Receive</span></a>
                                     </li>
                                     <li class="nav-item"> <a class="nav-link " data-toggle="tab" href="#stock_list"
                                             role="tab"><span class="hidden-sm-up"><i class="ion-home"></i></span> <span
                                                 class="hidden-xs-down">All Stock</span></a> </li>
                                     <li class="nav-item"> <a class="nav-link" data-toggle="tab" href="#purchase_list"
                                             role="tab"><span class="hidden-sm-up"><i class="ion-person"></i></span>
-                                            <span class="hidden-xs-down">Purchase List</span></a> </li>
+                                            <span class="hidden-xs-down">Receive List</span></a> </li>
                                     <li class="nav-item"> <a class="nav-link" data-toggle="tab"
                                             href="#purchase_Invoice_list" role="tab"><span class="hidden-sm-up"><i
                                                     class="ion-person"></i></span>
-                                            <span class="hidden-xs-down">Purchase Invoice List</span></a> </li>
+                                            <span class="hidden-xs-down">Receive Invoice</span></a> </li>
                                 </ul>
                                 <!-- Tab panes -->
                                 <div class="tab-content">
                                     <div class="tab-pane active" id="manage_stock" role="tabpane1">
                                         <div class="col-xl-12">
                                             <div class="box-header with-border">
-                                                <h4 class="box-title">Purchase Product</h4>
+                                                <h4 class="box-title">Receive Material</h4>
                                             </div>
                                             <!-- /.box-header -->
                                             <div class="box-body">
@@ -69,7 +69,7 @@
                                                         <div class="row">
                                                             <div class="col-md-6">
                                                                 <div class="form-group">
-                                                                    <label>Supplier</label>
+                                                                    <label>Supplier <span class="text-danger">*</span></label>
                                                                     <select name="supplier_id[]"
                                                                         class="form-control supplier-select select2"
                                                                         style="width: 100%;" required>
@@ -83,7 +83,7 @@
                                                                     </select>
                                                                 </div>
                                                                 <div class="form-group">
-                                                                    <label>Product</label>
+                                                                    <label>Material <span class="text-danger">*</span></label>
                                                                     <select name="product_code[]"
                                                                         class="form-control product-select select2"
                                                                         style="width: 100%;" required>
@@ -94,7 +94,7 @@
                                                             </div>
                                                             <div class="col-md-6">
                                                                 <div class="form-group">
-                                                                    <label>Quantity</label>
+                                                                    <label>Quantity <span class="text-danger">*</span></label>
                                                                     <div class="controls">
                                                                         <input type="number" name="quantity[]"
                                                                             class="form-control" value="" required
@@ -102,7 +102,7 @@
                                                                     </div>
                                                                 </div>
                                                                 <div class="form-group">
-                                                                    <label>Unit Price</label>
+                                                                    <label>Unit Price <span class="text-danger">*</span></label>
                                                                     <div class="controls">
                                                                         <input type="number" name="price[]"
                                                                             class="form-control" value="" required
@@ -175,9 +175,9 @@
                                                                     <label>Pay Amount</label>
                                                                     <div class="controls">
                                                                         <input type="number" name="pay"
-                                                                            class="form-control" value="" required
+                                                                            class="form-control" value="0" required
                                                                             placeholder="Enter Pay Amount"
-                                                                            min="1">
+                                                                            >
                                                                     </div>
                                                                 </div>
 
@@ -218,7 +218,7 @@
                                                 <div class="row">
                                                 <div class="col-md-6 ">
                                                 <div class="form-group">
-                                                <label>Supplier</label>
+                                                <label>Supplier <span class="text-danger">*</span></label>
                                                 <select name="supplier_id[]" class="form-control supplier-select" required>
                                                 <option value="" selected="selected" disabled="">Select Supplier</option>
                                                 @foreach ($supplierdata as $key => $supplier)
@@ -227,22 +227,22 @@
                                                 </select>
                                                 </div>
                                                 <div class="form-group">
-                                                <label>Product</label>
+                                                <label>Material <span class="text-danger">*</span></label>
                                                 <select name="product_code[]" class="form-control product-select" required>
-                                                <option value="" selected="selected" disabled="">Select Product</option>
+                                                <option value="" selected="selected" disabled="">Select Material</option>
                                                 </select>
                                                 </div>
                                                 <div style="border: 4px solid transparent;"></div>
                                                 </div>
                                                 <div class="col-md-6">
                                                          <div class="form-group">
-                                                            <label>Quantity</label>
+                                                            <label>Quantity <span class="text-danger">*</span></label>
                                                             <div class="controls">
                                                               <input type="number" name="quantity[]" class="form-control" value="" required placeholder="Enter Quantity" min="1">
                                                             </div>
                                                           </div>
                                                           <div class="form-group">
-                                                            <label>Unit Price</label>
+                                                            <label>Unit Price <span class="text-danger">*</span></label>
                                                             <div class="controls">
                                                               <input type="number" name="price[]" class="form-control" value="" required placeholder="Enter Unit Price" min="1">
                                                             </div>

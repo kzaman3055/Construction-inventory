@@ -7,7 +7,7 @@
             <div class="content-header">
                 <div class="d-flex align-items-center">
                     <div class="mr-auto">
-                        <h3 class="page-title">Manage Category</h3>
+                        <h3 class="page-title">Material Category</h3>
                         <div class="d-inline-block align-items-center">
                             <nav>
                                 <ol class="breadcrumb">
@@ -124,8 +124,7 @@
                         <div class="box">
                             <div class="box-header with-border">
                                 <h3 class="box-title">All Category List</h3>
-                                    <a type="submit" href="{{ URL::to('manage-product') }}" class="btn btn-primary pull-right"style="margin-right: 10px;">Add Product</a>
-                                    <a type="submit" href="{{ URL::to('manage-category') }}" class="btn btn-info pull-right"style="margin-right: 10px;">Add Category</a>
+                                    <a type="submit" href="{{ URL::to('manage-product') }}" class="btn btn-primary pull-right"style="margin-right: 10px;">Add Material</a>
 
                             </div>
                             <!-- /.box-header -->
@@ -145,7 +144,7 @@
                                                 <tr>
                                                     <td>{{ $key + 1 }}</td>
                                                     <td>{{ $categories->name }}</td>
-                                                
+
                                                     <td>
                                                         <div class="btn-group mb-5">
                                                             <button type="button"

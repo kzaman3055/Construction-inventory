@@ -78,8 +78,8 @@
                                                                 <label>Category</label>
                                                                 <select name="category_id" class="form-control select2"
                                                                     style="width: 100%;" ">
-                                                                        <option value="" selected disabled>Select Category</option>
-                                                                         @foreach ($categorydata as $category)
+                                                                            <option value="" selected disabled>Select Category</option>
+                                                                              @foreach ($categorydata as $category)
                                                                     <option value="{{ $category->id }}"
                                                                         {{ $category->id == $editdata->category_id ? 'selected' : '' }}>
                                                                         {{ $category->name }}</option>
@@ -326,7 +326,7 @@
                                             <div class="row">
                                                 <div class="col-md-6">
                                                     <div class="form-group">
-                                                        <label>Supplier</label>
+                                                        <label>Supplier <span class="text-danger">*</span></label>
                                                         <select name="suppliers_id[]" class="form-control select2"
                                                             style="width: 100%;" required>
                                                             <option value="" selected="selected" disabled="">
@@ -340,14 +340,14 @@
                                                         </select>
                                                     </div>
                                                     <div class="form-group">
-                                                        <label>Name</label>
+                                                        <label>Name <span class="text-danger">*</span></label>
                                                         <div class="controls">
                                                             <input type="text" name="name[]" class="form-control"
                                                                 value="" required placeholder="Enter Product Name">
                                                         </div>
                                                     </div>
                                                     <div class="form-group">
-                                                        <label>Category</label>
+                                                        <label>Category <span class="text-danger">*</span></label>
                                                         <select name="category_id[]"
                                                             class="form-control category-select select2"
                                                             style="width: 100%;" required>
@@ -363,7 +363,7 @@
 
 
                                                     <div class="form-group">
-                                                        <label>Unit</label>
+                                                        <label>Unit <span class="text-danger">*</span></label>
                                                         <select name="unit_id[]" class="form-control select2"
                                                             style="width: 100%;" required>
                                                             <option value="" selected="selected" disabled="">
@@ -432,7 +432,7 @@
 
 
                                                     <div class="form-group">
-                                                        <label>Description</label>
+                                                        <label>Description <span class="text-danger">*</span></label>
                                                         <div class="controls">
                                                             <textarea name="description[]" class="form-control" rows="5" required placeholder="Enter Product Name"></textarea>
                                                         </div>
@@ -458,15 +458,16 @@
                                             $('#add-product').click(function() {
                                                 var html = `
 
-                                                                <h4 class="box-title">Add more Product</h4>
 
                                                                     <div class = "product-field col-md-12">
+                                                                        <h4 class="box-title">Add more Product</h4>
+
     <div class="row">
                                                                     <div class="col-md-6 ">
 
 
                                                                         <div class="form-group">
-                                                                        <label>Supplier</label>
+                                                                        <label>Supplier <span class="text-danger">*</span></label>
                                                                         <select name="suppliers_id[]"
                                                                             class="form-control supplier-select" style="width: 100%;"
                                                                             required>
@@ -481,13 +482,13 @@
                                                                         </select>
                                                                     </div>
                                                               <div class="form-group">
-                                                                <label>Name</label>
+                                                                <label>Name <span class="text-danger">*</span></label>
                                                                 <div class="controls">
                                                                   <input type="text" name="name[]" class="form-control" value="" required placeholder="Enter Product Name">
                                                                 </div>
                                                               </div>
                                                               <div class="form-group">
-                                                                <label>Category</label>
+                                                                <label>Category <span class="text-danger">*</span></label>
                                                                 <select name="category_id[]" class="form-control category-select" required>
                                                                   <option value="" selected="selected" disabled="">Select Category</option>
                                                                   @foreach ($categorydata as $key => $category)
@@ -506,7 +507,7 @@
 
 
                                                                     <div class="form-group">
-                                                                        <label>Unit</label>
+                                                                        <label>Unit <span class="text-danger">*</span></label>
                                                                         <select name="unit_id[]" class="form-control unit-select"
                                                                             style="width: 100%;" required>
                                                                             <option value="" selected="selected"
@@ -538,7 +539,7 @@
 
 
                                                                 <div class="form-group">
-                            <label>Description</label>
+                            <label>Description <span class="text-danger">*</span></label>
                             <div class="controls">
                                 <textarea name="description[]" class="form-control" rows="5" required placeholder="Enter Product Name"></textarea>
                             </div>

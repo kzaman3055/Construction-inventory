@@ -64,7 +64,7 @@
                                     <div class="row">
                                         <div class="col-md-6">
                                             <div class="form-group">
-                                                <label>Name</label>
+                                                <label>Name <span class="text-danger">*</span></label>
                                                 <div class="controls">
                                                     <input type="text" name="name" class="form-control"
                                                         value="{{ !empty($editdata->name) ? $editdata->name : '' }}"
@@ -74,7 +74,7 @@
                                         </div>
                                         <div class="col-md-6">
                                             <div class="form-group">
-                                                <label>Email</label>
+                                                <label>Email <span class="text-danger">*</span></label>
                                                 <div class="controls">
                                                     <input type="email" name="email" class="form-control"
                                                         value="{{ !empty($editdata->email) ? $editdata->email : '' }}"
@@ -86,7 +86,7 @@
                                     <div class="row">
                                         <div class="col-md-6">
                                             <div class="form-group">
-                                                <label>Mobile</label>
+                                                <label>Mobile <span class="text-danger">*</span></label>
                                                 <div class="controls">
                                                     <input type="tel" name="mobile" class="form-control"
                                                         value="{{ !empty($editdata->mobile) ? $editdata->mobile : '' }}"
@@ -96,7 +96,7 @@
                                         </div>
                                         <div class="col-md-6">
                                             <div class="form-group">
-                                                <label>Address</label>
+                                                <label>Address <span class="text-danger">*</span></label>
                                                 <div class="controls">
                                                     <textarea rows="3" cols="5" name="address" class="form-control" required placeholder="Enter Address">{{ !empty($editdata->address) ? $editdata->address : '' }}</textarea>
                                                 </div>
@@ -123,7 +123,7 @@
                                         <div class="col-md-4">
 
                                             <div class="form-group">
-                                                <label for="category_id">Category</label>
+                                                <label for="category_id">Category <span class="text-danger">*</span></label>
                                                 <select name="category_id[]"  class="form-control select2">
                                                     <option value="" disabled selected>Select Category</option>
                                                     @foreach($alldailycostcategory as $category)
@@ -141,7 +141,7 @@
                                         </div>
                                         <div class="col-md-4">
                                             <div class="form-group">
-                                                <label>Amount &#2547;
+                                                <label>Amount &#2547; <span class="text-danger">*</span>
                                                 </label>
                                                 <div class="controls">
                                                     <input type="number" name="amount[]" class="form-control"
@@ -181,7 +181,7 @@
     <div class="row">
         <div class="col-md-4">
             <div class="form-group">
-                <label for="category_id">Category</label>
+                <label for="category_id">Category</label> <span class="text-danger">*</span>
                 <select name="category_id[]"  class="form-control category-select">
                     <option value="" disabled selected>Select Category</option>
                     @foreach($alldailycostcategory as $category)
@@ -193,7 +193,7 @@
         </div>
         <div class="col-md-4">
             <div class="form-group">
-                <label>Amount &#2547;</label>
+                <label>Amount &#2547; <span class="text-danger">*</span></label>
                 <div class="controls">
                     <input type="number" name="amount[]" class="form-control" value="" required placeholder="Enter Amount">
                 </div>
@@ -239,7 +239,6 @@
                             <div class="box">
                                 <div class="box-header with-border">
                                     <h3 class="box-title">All Project List</h3>
-                                    <h6 class="box-subtitle">Export data to Copy, CSV, Excel, PDF & Print</h6>
                                 </div>
                                 <!-- /.box-header -->
                                 <div class="box-body">
@@ -419,7 +418,7 @@
                                                                             <div class="row mb-3">
                                                                                 <div class="col-4">
                                                                                     <label class="form-label">Square
-                                                                                        Feet</label>
+                                                                                        Feet <span class="text-danger">*</span></label>
                                                                                 </div>
                                                                                 <div class="col-8">
                                                                                     <input type="text"
@@ -431,7 +430,7 @@
                                                                             <div class="row mb-3">
                                                                                 <div class="col-4">
                                                                                     <label class="form-label">Estimation
-                                                                                        Amount &#2547;
+                                                                                        Amount &#2547; <span class="text-danger">*</span>
                                                                                     </label>
                                                                                 </div>
                                                                                 <div class="col-8">
@@ -444,7 +443,7 @@
                                                                             <div class="row mb-3">
                                                                                 <div class="col-4">
                                                                                     <label class="form-label">Advance
-                                                                                        Amount &#2547;
+                                                                                        Amount &#2547; <span class="text-danger">*</span>
                                                                                     </label>
                                                                                 </div>
                                                                                 <div class="col-8">

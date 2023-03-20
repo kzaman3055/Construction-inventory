@@ -47,7 +47,7 @@
                                 @endif
                                 <!-- text input -->
                                 <div class="form-group">
-                                    <label>Name</label>
+                                    <label>Name <span class="text-danger">*</span></label>
                                     <div class="controls">
                                         <input type="text" name="name" class="form-control"
                                             value="{{ !empty($editdata->name) ? $editdata->name : '' }}" required
@@ -55,7 +55,7 @@
                                     </div>
                                 </div>
                                 <div class="form-group">
-                                    <label>Email</label>
+                                    <label>Email <span class="text-danger">*</span></label>
                                     <div class="controls">
                                         <input type="email" name="email" class="form-control"
                                             value="{{ !empty($editdata->email) ? $editdata->email : '' }}" required
@@ -63,7 +63,7 @@
                                     </div>
                                 </div>
                                 <div class="form-group">
-                                    <label>Mobile</label>
+                                    <label>Mobile <span class="text-danger">*</span></label>
                                     <div class="controls">
                                         <input type="tel" name="mobile" class="form-control"
                                             value="{{ !empty($editdata->mobile) ? $editdata->mobile : '' }}" required
@@ -71,7 +71,7 @@
                                     </div>
                                 </div>
                                 <div class="form-group">
-                                    <label>Address</label>
+                                    <label>Address <span class="text-danger">*</span></label>
                                     <div class="controls">
                                         <textarea rows="3" cols="5" name="address" class="form-control" required placeholder="Enter Address">{{ !empty($editdata->address) ? $editdata->address : '' }}</textarea>
                                     </div>
@@ -88,7 +88,6 @@
                         <div class="box">
                             <div class="box-header with-border">
                                 <h3 class="box-title">All Supplier List</h3>
-                                <h6 class="box-subtitle">Export data to Copy, CSV, Excel, PDF & Print</h6>
                             </div>
                             <!-- /.box-header -->
                             <div class="box-body">

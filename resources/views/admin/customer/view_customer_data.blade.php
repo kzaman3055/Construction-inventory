@@ -40,7 +40,7 @@
                                     <h4 class="box-title">Data of <strong style="color: blue"> {{ $customerdata->name }}
                                         </strong></h4>
                                 </div>
-                                <div class="col-md-6 text-right">
+                                {{-- <div class="col-md-6 text-right">
                                     <div class="dropdown">
                                         <a data-toggle="dropdown" href="#"><i
                                                 class="ti-more-alt rotate-90 text-black"></i></a>
@@ -53,7 +53,7 @@
                                             <a class="dropdown-item" href="#"><i class="fa fa-ban"></i> Block</a>
                                         </div>
                                     </div>
-                                </div>
+                                </div> --}}
                             </div>
                         </div>
 
@@ -228,7 +228,7 @@
                                                                                 <div class="row mb-3">
                                                                                     <div class="col-4">
                                                                                         <label class="form-label">
-                                                                                            Amount &#2547;
+                                                                                            Amount &#2547; <span class="text-danger">*</span>
                                                                                         </label>
                                                                                     </div>
                                                                                     <div class="col-8">

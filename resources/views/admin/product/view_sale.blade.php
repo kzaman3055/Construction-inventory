@@ -41,7 +41,7 @@
                                             <span class="hidden-xs-down">Transfer List</span></a> </li>
                                     <li class="nav-item"> <a class="nav-link" data-toggle="tab" href="#sale_Invoice_list"
                                             role="tab"><span class="hidden-sm-up"><i class="ion-person"></i></span>
-                                            <span class="hidden-xs-down">Transfer Invoice List</span></a> </li>
+                                            <span class="hidden-xs-down">Transfer Invoice</span></a> </li>
                                 </ul>
                                 <!-- Tab panes -->
                                 <div class="tab-content">
@@ -51,7 +51,7 @@
                                                 <h4 class="box-title">Transfer Product</h4>
                                                 <a type="submit" href="{{ URL::to('manage-customer') }}"
                                                     class="btn btn-primary pull-right"style="margin-right: 10px;">Add
-                                                    Customer</a>
+                                                    Project</a>
                                             </div>
                                             <!-- /.box-header -->
 
@@ -66,7 +66,7 @@
                                                         <div class="row">
                                                             <div class="col-md-6">
                                                                 <div class="form-group">
-                                                                    <label>Customer/Project</label>
+                                                                    <label>Customer/Project <span class="text-danger">*</span></label>
                                                                     <select name="customer_id" class="form-control customer-select select2" style="width: 100%;" required>
                                                                         <option value="" selected="selected" disabled="">Select Customer/Project</option>
                                                                         @foreach ($customerdata as $key => $customer)
@@ -80,12 +80,12 @@
 
                                                                 </div>
                                                                 <div class="form-group">
-                                                                    <label>Product</label>
+                                                                    <label>Material <span class="text-danger">*</span></label>
                                                                     <select name="product_code[]"
                                                                         class="form-control supplier-select select2"
                                                                         style="width: 100%;" required>
                                                                         <option value="" selected="selected"
-                                                                            disabled="">Select Product</option>
+                                                                            disabled="">Select Material</option>
                                                                         @foreach ($alldata as $key => $product)
                                                                             @php
                                                                                 $stockQuantity = App\Models\ProductStock::where('product_code', $product->product_code)->first()->stock_quantity ?? 0;
@@ -102,7 +102,7 @@
                                                             </div>
                                                             <div class="col-md-6">
                                                                 <div class="form-group">
-                                                                    <label>Quantity</label>
+                                                                    <label>Quantity <span class="text-danger">*</span></label>
                                                                     <div class="controls">
                                                                         <input type="number" name="quantity[]"
                                                                             class="form-control" value="" required
@@ -111,7 +111,7 @@
                                                                     </div>
                                                                 </div>
                                                                 <div class="form-group">
-                                                                    <label>Unit Price</label>
+                                                                    <label>Unit Price <span class="text-danger">*</span></label>
                                                                     <div class="controls">
                                                                         <input type="number" name="price[]"
                                                                             class="form-control" value="" required
@@ -150,8 +150,8 @@
                                                                     <label>Pay Amount</label>
                                                                     <div class="controls">
                                                                         <input type="number" name="pay"
-                                                                            class="form-control" value="" required
-                                                                            placeholder="Enter Amount" min="1">
+                                                                            class="form-control" value="0" required
+                                                                            placeholder="Enter Amount" >
                                                                     </div>
                                                                 </div>
                                                                 <div
@@ -187,9 +187,9 @@
                                                 <div class="row">
                                                 <div class="col-md-6 ">
                                                                 <div class="form-group">
-                                                                    <label>Product</label>
+                                                                    <label>Material <span class="text-danger">*</span></label>
                                                                     <select name="product_code[]" class="form-control product-select select2" style="width: 100%;" required>
-                                                                        <option value="" selected="selected" disabled="">Select Product</option>
+                                                                        <option value="" selected="selected" disabled="">Select Material</option>
                                                                         @foreach ($alldata as $key => $product)
                                                                             @php
                                                                                 $stockQuantity = App\Models\ProductStock::where('product_code', $product->product_code)->first()->stock_quantity ?? 0;
@@ -206,7 +206,7 @@
                                                 </div>
                                                 <div class="col-md-6">
                                                          <div class="form-group">
-                                                            <label>Quantity</label>
+                                                            <label>Quantity <span class="text-danger">*</span></label>
                                                             <div class="controls">
                                                               <input type="number" name="quantity[]" class="form-control" value="" required placeholder="Enter Product Quantity" min="1">
                                                             </div>
@@ -217,7 +217,7 @@
 
 
                                                           <div class="form-group">
-                                                            <label>Unit Price</label>
+                                                            <label>Unit Price <span class="text-danger">*</span></label>
                                                             <div class="controls">
                                                               <input type="number" name="price[]" class="form-control" value="" required placeholder="Enter Unit Price" min="1">
                                                             </div>
